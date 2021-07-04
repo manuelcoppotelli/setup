@@ -1,0 +1,5 @@
+actions:
+- action: command.run
+  command: touch
+  args:
+  - {{ user.home_dir }}/.hushlogin

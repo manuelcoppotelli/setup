@@ -1,0 +1,4 @@
+actions:
+- action: file.copy
+  from: vimrc
+  to: {{user.home_dir}}/.vimrc

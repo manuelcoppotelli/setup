@@ -1,0 +1,7 @@
+actions:
+- action: package.install
+  name: pipx
+- action: command.run
+  command: pipx
+  args:
+  - ensurepath

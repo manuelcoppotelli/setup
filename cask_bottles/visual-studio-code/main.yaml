@@ -1,0 +1,22 @@
+depends:
+- nerd_fonts
+
+actions:
+- action: package.install
+  name: visual-studio-code
+  repository: homebrew/cask
+  extra_args:
+  - --appdir=/Applications
+
+# Automatically done by the brew formula
+# - action: command.run
+#   command: curl
+#   args:
+#   - -sSL
+#   - https://raw.githubusercontent.com/microsoft/vscode/master/resources/darwin/bin/code.sh
+#   - -o
+#   - /usr/local/bin/code
+
+- action: file.copy
+  from: settings.json
+  to: {{ user.config_dir }}/Code/User/settings.json

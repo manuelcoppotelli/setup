@@ -1,0 +1,4 @@
+actions:
+- action: file.copy
+  from: alias
+  to: {{user.home_dir}}/.aws/cli/alias

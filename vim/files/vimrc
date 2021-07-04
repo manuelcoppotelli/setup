@@ -1,0 +1,53 @@
+"-------- General -------"
+
+syntax enable
+
+"256 colours, please
+set t_Co=256
+
+"line numbers"
+set number
+
+
+"-------- Search -------"
+
+"highlist search"
+set hlsearch
+set incsearch
+
+
+"-------- Interactions -------"
+
+" Backspace behaviour
+set nocompatible
+set backspace=2
+
+
+"-------- Visual decorations -------"
+
+" Show status line
+set laststatus=2
+
+" Show what mode you’re currently in
+set showmode
+
+" Show what commands you’re typing
+set showcmd
+
+" Allow modelines
+set modeline
+
+" Show current line and column position in file
+set ruler
+
+" Show file title in terminal tab
+set title
+
+
+"-------- Auto commands -------"
+
+"automatically source the Vimrc file on save.
+augroup autosourcing
+   autocmd!
+   autocmd BufWritePost .vimrc source %
+augroup END

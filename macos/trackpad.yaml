@@ -1,0 +1,136 @@
+actions:
+
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.AppleMultitouchTrackpad
+  - ActuateDetents
+  - -int
+  - "1"
+
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.AppleMultitouchTrackpad
+  - Clicking
+  - -int
+  - "1"
+
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.AppleMultitouchTrackpad
+  - ForceSuppressed
+  - -int
+  - "0"
+
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.AppleMultitouchTrackpad
+  - TrackpadFiveFingerPinchGesture
+  - -int
+  - "2"
+
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.AppleMultitouchTrackpad
+  - TrackpadFourFingerHorizSwipeGesture
+  - -int
+  - "2"
+
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.AppleMultitouchTrackpad
+  - TrackpadFourFingerPinchGesture
+  - -int
+  - "2"
+
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.AppleMultitouchTrackpad
+  - TrackpadFourFingerVertSwipeGesture
+  - -int
+  - "2"
+
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.AppleMultitouchTrackpad
+  - TrackpadPinch
+  - -int
+  - "1"
+
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.AppleMultitouchTrackpad
+  - TrackpadRightClick
+  - -int
+  - "1"
+
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.AppleMultitouchTrackpad
+  - TrackpadRotate
+  - -int
+  - "1"
+
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.AppleMultitouchTrackpad
+  - TrackpadScroll
+  - -int
+  - "1"
+
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.AppleMultitouchTrackpad
+  - TrackpadThreeFingerHorizSwipeGesture
+  - -int
+  - "2"
+
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.AppleMultitouchTrackpad
+  - TrackpadThreeFingerVertSwipeGesture
+  - -int
+  - "2"
+
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.AppleMultitouchTrackpad
+  - TrackpadTwoFingerDoubleTapGesture
+  - -int
+  - "1"
+
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.AppleMultitouchTrackpad
+  - TrackpadTwoFingerFromRightEdgeSwipeGesture
+  - -int
+  - "3"

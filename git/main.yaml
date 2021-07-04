@@ -1,0 +1,11 @@
+actions:
+- action: file.copy
+  from: gitconfig
+  to: {{ user.home_dir }}/.gitconfig
+  chmod: 644
+- action: file.copy
+  from: ignore
+  to: {{ user.home_dir }}/.git/ignore
+- action: directory.copy
+  from: templates
+  to: {{ user.home_dir }}/.git

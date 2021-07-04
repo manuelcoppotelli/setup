@@ -1,0 +1,9 @@
+depends:
+- mas
+
+actions:
+- action: command.run
+  command: mas
+  args:
+  - install 
+  - '1122008420'

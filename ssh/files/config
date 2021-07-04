@@ -1,0 +1,8 @@
+# Prevent sending all SSH public keys to anyone
+Host *
+  PubkeyAuthentication no
+  IdentitiesOnly yes
+
+# SSH over Session Manager
+host i-* mi-*
+  ProxyCommand sh -c "aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters 'portNumber=%p'"

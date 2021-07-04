@@ -1,0 +1,13 @@
+actions:
+- action: command.run
+  command: bash
+  args:
+  - -c
+  - |
+    NAMEEXT=$(curl -s "https://storage.googleapis.com/mimestream-releases" | xpath -e "//ListBucketResult/Contents[last()-1]/Key/text()" /dev/stdin)
+    NAME="${NAMEEXT%.*}"
+    curl -s "https://storage.googleapis.com/mimestream-releases/${NAMEEXT}" -o {{user.home_dir}}/Downloads/${NAMEEXT}
+    hdiutil mount {{user.home_dir}}/Downloads/${NAMEEXT}
+    cp -R "/Volumes/${NAME}/Mimestream.app" /Applications
+    hdiutil unmount "/Volumes/${NAME}/"
+    rm {{user.home_dir}}/Downloads/${NAMEEXT}

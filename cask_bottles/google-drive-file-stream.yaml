@@ -1,0 +1,6 @@
+actions:
+- action: package.install
+  name: google-drive-file-stream
+  repository: homebrew/cask
+  extra_args:
+  - --appdir=/Applications

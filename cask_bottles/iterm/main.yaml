@@ -1,0 +1,89 @@
+depends:
+- nerd_fonts
+
+actions:
+- action: package.install
+  name: iterm2
+  repository: homebrew/cask
+  extra_args:
+  - --appdir=/Applications
+
+# Advanced -> Allow sessions to survive logging out and back in
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.googlecode.iterm2
+  - BootstrapDaemon
+  - -bool
+  - 'false'
+
+# Show/hide all windows with a system-wide hotkey
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.googlecode.iterm2
+  - Hotkey
+  - -bool
+  - 'true'
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.googlecode.iterm2
+  - HotkeyChar
+  - -int
+  - '32'
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.googlecode.iterm2
+  - HotkeyChar
+  - -int
+  - '49'
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.googlecode.iterm2
+  - HotkeyModifiers
+  - -int
+  - '524288'
+
+# Profiles > Keys > Presets > Natural Text Editing
+# - action: command.run
+#   command: /usr/libexec/PlistBuddy
+#   args:
+#   - -c 'Remove :"New Bookmarks":0:"Keyboard Map"'
+#   - -c 'Add :"New Bookmarks":0:"Keyboard Map":"0x2a-0x200000":Action integer 12'
+#   - -c 'Add :"New Bookmarks":0:"Keyboard Map":"0x2a-0x200000":Text string "*"'
+#   - {{user.home_dir}}/Library/Preferences/com.googlecode.iterm2.plist
+
+# Profiles > General > Working Directory -> Advanced Configuration
+#- action: command.run
+#  command: /usr/libexec/PlistBuddy
+#  args:
+# - -c 'Add :"New Bookmarks":0:"AWDS Pane Directory" string ""'
+# - -c 'Add :"New Bookmarks":0:"AWDS Pane Option" string Recycle'
+# - -c 'Add :"New Bookmarks":0:"AWDS Tab Directory" string ""'
+# - -c 'Add :"New Bookmarks":0:"AWDS Tab Option" string Recycle'
+# - -c 'Add :"New Bookmarks":0:"AWDS Window Directory" string ""'
+# - -c 'Add :"New Bookmarks":0:"AWDS Window Option" string No'
+# - -c 'Set :"New Bookmarks":0:"Custom Directory" string Advanced'
+#   - {{user.home_dir}}/Library/Preferences/com.googlecode.iterm2.plist
+
+# Profiles > Text > Change Font
+#- action: command.run
+#  command: /usr/libexec/PlistBuddy
+#  args:
+#  - -c 'Add :"New Bookmarks":0:"Normal Font" string "MesloLGLNerdFontCompleteM-Regular 12"'
+#  - {{user.home_dir}}/Library/Preferences/com.googlecode.iterm2.plist
+
+
+# Profiles > Colors > Colors Presets
+#- action: command.run
+#  command: /usr/libexec/PlistBuddy
+#  args:
+#  - {{user.home_dir}}/Library/Preferences/com.googlecode.iterm2.plist

@@ -1,0 +1,126 @@
+actions:
+
+# Show Favorites Bar
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.Safari
+  - ShowFavoritesBar-v2
+  - -bool
+  - "true"
+
+# Show Sidebar in initial page
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.Safari
+  - ShowSidebarInTopSites
+  - -bool
+  - "true"
+
+# Disable AtuoFill
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.Safari
+  - AutoFillCreditCardData
+  - -bool
+  - "false"
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.Safari
+  - AutoFillFromAddressBook
+  - -bool
+  - "false"
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.Safari
+  - AutoFillMiscellaneousForms
+  - -bool
+  - "false"
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.Safari
+  - AutoFillPasswords
+  - -bool
+  - "false"
+
+# Do not open "safe" files automatically after downloading
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.Safari
+  - AutoOpenSafeDownloads
+  - -bool
+  - "false"
+
+# Remove downloads list items
+#   0: Manually
+#   1: When Safari Quits
+#   2: Upon Successful Download
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.Safari
+  - DownloadsClearingPolicy
+  - -int
+  - "2"
+
+# Enabling the Develop menu
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.Safari
+  - IncludeDevelopMenu
+  - -bool
+  - "true"
+
+# Enable the Web Inspector
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.Safari
+  - WebKitDeveloperExtrasEnabledPreferenceKey
+  - -bool
+  - "true"
+
+# Do not send search queries to Apple
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.Safari
+  - SuppressSearchSuggestions
+  - -bool
+  - "true"
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.Safari
+  - WebsiteSpecificSearchEnabled
+  - -bool
+  - "false"
+
+# Enable WebGL2
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.Safari
+  - ExperimentalWebGL2Enabled
+  - -bool
+  - "true"

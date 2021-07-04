@@ -1,0 +1,24 @@
+actions:
+- action: package.install
+  name: font-meslo-lg-nerd-font
+  repository: homebrew/cask-fonts
+  extra_args:
+  - --fontdir=/Library/Fonts
+
+- action: package.install
+  name: font-fira-code-nerd-font
+  repository: homebrew/cask-fonts
+  extra_args:
+  - --fontdir=/Library/Fonts
+
+- action: package.install
+  name: font-humor-sans
+  repository: homebrew/cask-fonts
+  extra_args:
+  - --fontdir=/Library/Fonts
+
+- action: package.install
+  name: font-gilbert
+  repository: homebrew/cask-fonts
+  extra_args:
+  - --fontdir=/Library/Fonts

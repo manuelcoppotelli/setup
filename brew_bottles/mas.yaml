@@ -1,0 +1,13 @@
+actions:
+- action: package.install
+  name: mas
+- action: command.run
+  command: mas
+  args:
+  - signin
+  - --dialog
+  - xxx@icloud.com
+- action: command.run
+  command: mas
+  args:
+  - upgrade

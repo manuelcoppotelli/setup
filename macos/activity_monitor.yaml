@@ -1,0 +1,50 @@
+actions:
+
+# Activity Monitor: Show the main window when launching
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.ActivityMonitor
+  - OpenMainWindow
+  - -bool
+  - "true"
+
+# Activity Monitor: Show
+#  100: All Processes
+#  101: All Processes, Hierarchally
+#  102: My Processes
+#  103: System Processes
+#  104: Other User Processes
+#  105: Active Processes
+#  106: Inactive Processes
+#  106: Inactive Processes
+#  107: Windowed Processes
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.ActivityMonitor
+  - ShowCategory
+  - -int
+  - "100"
+
+# Activity Monitor: Show Data in the Disk graph (instead of IO)
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.ActivityMonitor
+  - DiskGraphType
+  - -int
+  - "1"
+
+# Activity Monitor: Show Data in the Network graph (instead of packets)
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.ActivityMonitor
+  - NetworkGraphType
+  - -int
+  - "1"

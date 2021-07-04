@@ -1,0 +1,12 @@
+actions:
+
+# Allow guests to login to this computer
+- action: command.run
+  sudo: true
+  command: defaults
+  args:
+  - write
+  - /Library/Preferences/com.apple.loginwindow
+  - GuestEnabled
+  - -bool
+  - "false"

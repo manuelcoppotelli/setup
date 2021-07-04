@@ -1,0 +1,10 @@
+depends:
+- visual-studio-code
+
+actions:
+- action: command.run
+  command: code
+  args:
+  - --install-extension
+  - eamodio.gitlens
+  - --force

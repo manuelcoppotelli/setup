@@ -1,0 +1,56 @@
+actions:
+
+# Show Status Bar
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.finder
+  - ShowStatusBar
+  - -bool
+  - "true"
+
+# Search always searches current folder by default
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.finder
+  - FXDefaultSearchScope
+  - -string
+  - SCcf
+
+# Default view is Column
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.Finder
+  - FXPreferredViewStyle
+  - clmv
+
+# Show extensions
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - NSGlobalDomain
+  - "AppleShowAllExtensions"
+  - -bool
+  - "true"
+
+# Do not display file extension warning
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.finder
+  - "FXEnableExtensionChangeWarning"
+  - -bool
+  - "false"
+
+# Restart
+- action: command.run
+  command: killall
+  args:
+  - Finder

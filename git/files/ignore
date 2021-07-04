@@ -1,0 +1,53 @@
+# General
+.DS_Store
+.DS_Store?
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+# Insert them via vim by typing ctrl+v ctrl+m twice
+Icon
+
+# Thumbnails
+._*
+
+# Temporary files
+*~
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Other hidden files
+ehthumbs.db
+Thumbs.db
+
+# Vim swap files
+.*.sw?
+
+# JetBrains IDEs
+.idea
+.phpunit-watcher-cache.php
+
+# VS Code
+.vscode
+
+# Sublime Text
+*.sublime-project
+
+# Node
+node_modules
+npm-debug.log
+yarn-error.log

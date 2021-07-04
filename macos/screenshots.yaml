@@ -1,0 +1,11 @@
+actions:
+
+# Screenshots: disable shadow in screenshots
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.screencapture
+  - disable-shadow
+  - -bool
+  - "true"

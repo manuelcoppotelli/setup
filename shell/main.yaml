@@ -1,0 +1,48 @@
+actions:
+- action: command.run
+  command: sh
+  args:
+  - -c
+  - |
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+- action: command.run
+  command: git
+  args:
+  - clone
+  - https://github.com/romkatv/powerlevel10k.git
+  - {{user.home_dir}}/.oh-my-zsh/custom/themes/powerlevel10k
+- action: file.copy
+  from: p10k.zsh
+  to: {{user.home_dir}}/.p10k.zsh
+
+- action: package.install
+  name: zsh-autosuggestions
+- action: file.link
+  from: /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  to: {{user.home_dir}}/.oh-my-zsh/custom/zsh-autosuggestions.zsh
+
+- action: package.install
+  name: zsh-syntax-highlighting
+- action: file.link
+  from: /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  to: {{user.home_dir}}/.oh-my-zsh/custom/zsh-syntax-highlighting.zsh
+
+- action: package.install
+  name: zsh-history-substring-search
+- action: file.link
+  from: /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+  to: {{user.home_dir}}/.oh-my-zsh/custom/zsh-history-substring-search.zsh
+
+- action: package.install
+  name: z
+- action: file.link
+  from: /usr/local/etc/profile.d/z.sh
+  to: {{user.home_dir}}/.oh-my-zsh/custom/z.zsh
+
+- action: file.copy
+  from: zshrc
+  to: {{user.home_dir}}/.zshrc
+- action: directory.copy
+  from: includes
+  to: {{user.home_dir}}/.zsh

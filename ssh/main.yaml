@@ -1,0 +1,4 @@
+actions:
+- action: file.copy
+  from: config
+  to: {{user.home_dir}}/.ssh/config

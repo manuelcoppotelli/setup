@@ -1,0 +1,36 @@
+actions:
+
+# Put Dock on the left
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.dock
+  - orientation
+  - -string
+  - left
+
+# Do not show recents
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.dock
+  - "show-recents"
+  - -bool
+  - "false"
+
+# Remove all apps
+- action: command.run
+  command: defaults
+  args:
+  - write
+  - com.apple.dock
+  - persistent-apps
+  - -array
+
+# Restart
+- action: command.run
+  command: killall
+  args:
+  - Dock

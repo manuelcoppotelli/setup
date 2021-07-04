@@ -1,0 +1,7 @@
+actions:
+- action: command.run
+  sudo: true
+  command: softwareupdate
+  args:
+  - --install
+  - --all
