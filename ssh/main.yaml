@@ -2,3 +2,9 @@ actions:
 - action: file.copy
   from: config
   to: {{user.home_dir}}/.ssh/config
+- action: command.run
+  command: chmod
+  args:
+  - 600
+  - {{user.home_dir}}/.ssh/config
+  
