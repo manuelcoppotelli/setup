@@ -1,0 +1,14 @@
+actions:
+- action: package.install
+  name: docker
+- action: package.install
+  name: minikube
+- action: package.install
+  name: hyperkit
+- action: command.run
+  command: minikube
+  args:
+  - config
+  - set
+  - driver
+  - hyperkit
