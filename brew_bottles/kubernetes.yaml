@@ -1,0 +1,7 @@
+actions:
+- action: package.install
+  name: kind
+- action: package.install
+  name: kubectl
+- action: package.install
+  name: k9s
