@@ -1,0 +1,7 @@
+actions:
+- action: package.install
+  name: tunnelblick
+  repository: homebrew/cask
+  extra_args:
+  - --appdir=/Applications
+  
