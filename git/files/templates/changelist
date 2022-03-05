@@ -1,0 +1,23 @@
+math: improve Sin, Cos and Tan precision for very large arguments
+# ^   ^----------------------------------------------------------------|
+# |   |
+# |   +-> This change modifies the source code to ___.
+# |
+# +-------> Name of the package or file modified.
+
+# Follow the first line by a blank line.
+The existing implementation has poor numerical properties for
+large arguments, so use the McGillicutty algorithm to improve
+accuracy above 1e10.
+# ^--------------------------------------------------------------------|
+# |
+# +-> Provide context for the change and explain what it does.
+
+Fixes #159, Fixes #160
+# ^   ^----------------------------------------------------------------|
+# |   |
+# |   +-> This change modifies the source code to ___.
+# |
+# +-------> Completeness of the change: Fixes, Updates.
+
+On-behalf-of: @pagopa
