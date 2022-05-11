@@ -1,4 +1,14 @@
 actions:
+
+- action: package.install
+  name: awscli
+
+- action: package.install
+  name: session-manager-plugin
+  repository: homebrew/cask
+  extra_args:
+  - --appdir=/Applications
+
 - action: file.copy
   from: alias
   to: {{user.home_dir}}/.aws/cli/alias
