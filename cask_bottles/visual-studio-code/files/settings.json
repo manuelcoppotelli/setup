@@ -21,6 +21,7 @@
     "editor.rulers": [
         80
     ],
+    "editor.unicodeHighlight.invisibleCharacters": false,
     "editor.wordWrap": "on",
     "extensions.ignoreRecommendations": true,
     "files.autoSave": "onFocusChange",
@@ -44,13 +45,16 @@
     "terminal.explorerKind": "external",
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.fontFamily": "MesloLGS Nerd Font",
+    "update.mode": "none",
+    "update.showReleaseNotes": false,
     "vale.core.useCLI": true,
     "window.zoomLevel": 1,
-    "workbench.colorTheme": "Panda Syntax",
+    "workbench.colorTheme": "Big G - Light",
     "workbench.editorAssociations": {
         "git-rebase-todo": "gitlens.rebase"
     },
     "workbench.editor.untitled.hint": "hidden",
+    "workbench.layoutControl.enabled": false,
     "workbench.startupEditor": "newUntitledFile",
     "yaml.customTags": [
         "!And",
