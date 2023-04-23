@@ -1,0 +1,7 @@
+depends:
+- visual-studio-code
+
+actions:
+- action: git.clone
+  repository: manuelcoppotelli/big-g
+  directory: {{ user.home_dir }}/.vscode/extensions/big-g.manuelcop-0.1.0
