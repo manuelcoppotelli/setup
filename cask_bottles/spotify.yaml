@@ -1,0 +1,6 @@
+actions:
+- action: package.install
+  name: spotify
+  repository: homebrew/cask
+  extra_args:
+  - --appdir=/Applications

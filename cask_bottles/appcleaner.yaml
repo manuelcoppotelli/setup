@@ -1,6 +1,6 @@
 actions:
 - action: package.install
-  name: docker
+  name: appcleaner
   repository: homebrew/cask
   extra_args:
   - --appdir=/Applications
