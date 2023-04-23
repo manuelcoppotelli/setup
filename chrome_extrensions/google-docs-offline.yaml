@@ -1,0 +1,12 @@
+depends:
+- google-chrome
+
+actions:
+- action: command.run
+  command: bash
+  args:
+  - -c
+  - |
+    EXTENSION_ID=ghbmnnjooekpmoecnnnilnnbdlolhkhi
+    echo '{"external_update_url": "https://clients2.google.com/service/update2/crx"}' > \
+      "$HOME/Library/Application Support/Google/Chrome/External Extensions/$EXTENSION_ID.json"
