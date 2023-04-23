@@ -4,3 +4,10 @@ actions:
   repository: homebrew/cask
   extra_args:
   - --appdir=/Applications
+
+# This app self updates. Do not update via brew
+- action: command.run
+  command: bash
+  args:
+  - -c
+  - rm -r "$(brew --caskroom)/google-drive"
