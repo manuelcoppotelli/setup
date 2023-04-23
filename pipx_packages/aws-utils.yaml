@@ -1,13 +1,6 @@
 depends:
 - pipx
 
-actions:
-- action: command.run
-  command: pipx
-  args:
-  - install
-  - aws-sso-util
-
 - action: command.run
   command: pipx
   args:

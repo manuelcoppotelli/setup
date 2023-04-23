@@ -1,9 +1,0 @@
-depends:
-- pipx
-
-actions:
-- action: command.run
-  command: pipx
-  args:
-  - install
-  - virtualenv
