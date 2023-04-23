@@ -1,0 +1,25 @@
+actions:
+- action: package.install
+  name: rancher
+  repository: homebrew/cask
+  extra_args:
+  - --appdir=/Applications
+
+# Configure defaults
+- action: command.run
+  command: bash
+  args:
+  - -c
+  - |
+    DEFAULTS=~/Library/Preferences/io.rancherdesktop.profile.defaults.plist
+    plutil -create xml1 "$DEFAULTS"
+
+    plutil -insert containerEngine -dictionary "$DEFAULTS"
+    plutil -insert containerEngine.name -string moby "$DEFAULTS"
+
+    plutil -insert kubernetes -dictionary "$DEFAULTS"
+    plutil -insert kubernetes.enabled -bool false "$DEFAULTS"
+
+    plutil -insert application -dictionary "$DEFAULTS"
+    plutil -insert application.telemetry -dictionary false "$DEFAULTS"
+    plutil -insert application.telemetry.enabled -bool false "$DEFAULTS"
