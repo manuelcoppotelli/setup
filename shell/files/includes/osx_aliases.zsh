@@ -15,6 +15,10 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
+# One-liner tree for current directory
+# http://murphymac.com/tree-command-for-mac/
+alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+
 # Create a new directory and enter it
 function mkd() {
    mkdir -p "$@" && cd "$@"
