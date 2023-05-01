@@ -1,0 +1,9 @@
+depends:
+- git
+
+actions:
+- action: package.install
+  name: lazygit
+- action: file.copy
+  from: plugin.yml
+  to: {{ user.config_dir }}/lazygit/config.yml
