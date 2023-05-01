@@ -1,0 +1,9 @@
+depends:
+- kubectl
+
+actions:
+- action: package.install
+  name: k9s
+- action: file.copy
+  from: plugin.yml
+  to: {{ user.config_dir }}/k9s/plugin.yml

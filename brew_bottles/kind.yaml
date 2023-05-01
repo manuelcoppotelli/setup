@@ -1,0 +1,6 @@
+depends:
+- rancher
+
+actions:
+- action: package.install
+  name: kind

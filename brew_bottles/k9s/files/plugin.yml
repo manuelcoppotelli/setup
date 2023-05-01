@@ -1,0 +1,27 @@
+plugin:
+
+  # Defines a plugin to provide a `Ctrl-F` shortcut to remove any finalizer.
+  delfinalizers:
+    # Define a mnemonic to invoke the plugin
+    shortCut: Ctrl-F
+    # What will be shown on the K9s menu
+    description: Del Finalizers
+    # Collections of views that support this shortcut. (You can use `all`)
+    scopes:
+    - all
+    # The command to run upon invocation. Can use Krew plugins here too!
+    command: kubectl
+    # Whether or not to run the command in background mode
+    background: true
+    # Defines the command arguments
+    args:
+    - patch
+    - $RESOURCE_NAME.$RESOURCE_GROUP
+    - $NAME
+    - -n
+    - $NAMESPACE
+    - --context
+    - $CONTEXT
+    - -p
+    - '{"metadata" : {"finalizers" : [] }}'
+    - --type=merge
