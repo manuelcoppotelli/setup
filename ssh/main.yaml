@@ -5,6 +5,6 @@ actions:
 - action: command.run
   command: chmod
   args:
-  - 600
+  - '600'
   - {{user.home_dir}}/.ssh/config
   
