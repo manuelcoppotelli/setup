@@ -26,10 +26,10 @@ plugin:
     - '{"metadata" : {"finalizers" : [] }}'
     - --type=merge
 
-  # Defines a plugin to provide a `Shift-H` shortcut to show helm manifest.
+  # Defines a plugin to provide a `m` shortcut to show helm manifest.
   helmmanifest:
     # Define a mnemonic to invoke the plugin
-    shortCut: Shift-H
+    shortCut: m
     # What will be shown on the K9s menu
     description: Helm Manifest
     # Collections of views that support this shortcut. (You can use `all`)
@@ -42,12 +42,12 @@ plugin:
     # Defines the command arguments
     args:
     - -c
-    - "echo $NAME | grep -v 'sh.helm.release.v' || kubectl get secret $NAME --context $CONTEXT -n $NAMESPACE -o go-template='{{.data.release | base64decode | base64decode}}' | gzip -d | jq --color-output --raw-output '.manifest' | less --RAW-CONTROL-CHARS"
+    - "echo $NAME | grep -v 'sh.helm.release.v' || kubectl get secret $NAME --context $CONTEXT -n $NAMESPACE -o go-template='{{.data.release | base64decode | base64decode}}' | gzip -d | jq --raw-output '.manifest' | yq --colors | less --RAW-CONTROL-CHARS"
 
-  # Defines a plugin to provide a `Shift-L` shortcut to show helm values.
+  # Defines a plugin to provide a `v` shortcut to show helm values.
   helmvalues:
     # Define a mnemonic to invoke the plugin
-    shortCut: Shift-V
+    shortCut: v
     # What will be shown on the K9s menu
     description: Helm Values
     # Collections of views that support this shortcut. (You can use `all`)
