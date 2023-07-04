@@ -25,3 +25,39 @@ plugin:
     - -p
     - '{"metadata" : {"finalizers" : [] }}'
     - --type=merge
+
+  # Defines a plugin to provide a `Shift-H` shortcut to show helm manifest.
+  helmmanifest:
+    # Define a mnemonic to invoke the plugin
+    shortCut: Shift-H
+    # What will be shown on the K9s menu
+    description: Helm Manifest
+    # Collections of views that support this shortcut. (You can use `all`)
+    scopes:
+    - secrets
+    # The command to run upon invocation. Can use Krew plugins here too!
+    command: sh
+    # Whether or not to run the command in background mode
+    background: false
+    # Defines the command arguments
+    args:
+    - -c
+    - "echo $NAME | grep -v 'sh.helm.release.v' || kubectl get secret $NAME --context $CONTEXT -n $NAMESPACE -o go-template='{{.data.release | base64decode | base64decode}}' | gzip -d | jq --color-output --raw-output '.manifest' | less --RAW-CONTROL-CHARS"
+
+  # Defines a plugin to provide a `Shift-L` shortcut to show helm values.
+  helmvalues:
+    # Define a mnemonic to invoke the plugin
+    shortCut: Shift-V
+    # What will be shown on the K9s menu
+    description: Helm Values
+    # Collections of views that support this shortcut. (You can use `all`)
+    scopes:
+    - secrets
+    # The command to run upon invocation. Can use Krew plugins here too!
+    command: sh
+    # Whether or not to run the command in background mode
+    background: false
+    # Defines the command arguments
+    args:
+    - -c
+    - "echo $NAME | grep -v 'sh.helm.release.v' || kubectl get secret $NAME --context $CONTEXT -n $NAMESPACE -o go-template='{{.data.release | base64decode | base64decode}}' | gzip -d | jq --color-output --raw-output '.chart.values * .config' | less --RAW-CONTROL-CHARS"
