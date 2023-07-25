@@ -13,7 +13,8 @@ actions:
   repository: artginzburg/tap
 - action: command.run
   sudo: true
-  command: bash
+  command: brew
   args:
-  - -c
-  - brew services start artginzburg/tap/sudo-touchid
+  - services
+  - start
+  - artginzburg/tap/sudo-touchid
