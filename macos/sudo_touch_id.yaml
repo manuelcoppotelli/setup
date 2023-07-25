@@ -1,3 +1,12 @@
+# ⚠️ Taking root:admin ownership of some sudo-touchid paths:
+#   $(brew --cellar)/sudo-touchid/0.4/bin
+#   $(brew --cellar)/sudo-touchid/0.4/bin/sudo-touchid
+#   $(brew --prefix)/opt/sudo-touchid
+#   $(brew --prefix)/opt/sudo-touchid/bin
+#   $(brew --prefix)/var/homebrew/linked/sudo-touchid
+# This will require manual removal of these paths using `sudo rm` on
+# `brew upgrade/reinstall/uninstall`.
+
 actions:
 - action: package.install
   name: sudo-touchid
