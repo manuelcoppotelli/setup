@@ -4,8 +4,7 @@
 #   $(brew --prefix)/opt/sudo-touchid
 #   $(brew --prefix)/opt/sudo-touchid/bin
 #   $(brew --prefix)/var/homebrew/linked/sudo-touchid
-# This will require manual removal of these paths using `sudo rm` on
-# `brew upgrade/reinstall/uninstall`.
+# This will require manual removal of these paths using `sudo rm` on brew upgrade/reinstall/uninstall`.
 
 actions:
 - action: package.install
