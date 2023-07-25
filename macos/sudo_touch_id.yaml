@@ -7,4 +7,4 @@ actions:
   command: bash
   args:
   - -c
-  - brew services info artginzburg/tap/sudo-touchid
+  - brew services start artginzburg/tap/sudo-touchid
