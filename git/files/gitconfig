@@ -104,3 +104,6 @@
 	name = Manuel Coppotelli
 	email = manuelcoppotelli@users.noreply.github.com
 	username = manuelcoppotelli
+
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
