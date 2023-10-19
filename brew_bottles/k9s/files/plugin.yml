@@ -61,3 +61,22 @@ plugin:
     args:
     - -c
     - "echo $NAME | grep -v 'sh.helm.release.v' || kubectl get secret $NAME --context $CONTEXT -n $NAMESPACE -o go-template='{{.data.release | base64decode | base64decode}}' | gzip -d | jq --color-output --raw-output '.chart.values * .config' | less --RAW-CONTROL-CHARS"
+
+  # Defines a plugin to provide a `k` shortcut to show certificate details.
+  certdetails:
+    # Define a mnemonic to invoke the plugin
+    shortCut: k
+    # What will be shown on the K9s menu
+    description: Certificate
+    # Collections of views that support this shortcut. (You can use `all`)
+    scopes:
+    - secrets
+    # The command to run upon invocation. Can use Krew plugins here too!
+    command: sh
+    # Whether or not to run the command in background mode
+    background: false
+    # Defines the command arguments
+    args:
+    - -c
+    - "kubectl get secret $NAME --context $CONTEXT -n $NAMESPACE -o go-template='{{index .data \"tls.crt\" | base64decode}}' | openssl x509 -subject -dates -ext subjectAltName -noout | less --RAW-CONTROL-CHARS"
+    
