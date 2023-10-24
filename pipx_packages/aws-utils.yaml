@@ -7,3 +7,16 @@ actions:
   args:
   - install
   - aws-export-credentials
+
+- action: command.run
+  command: pipx
+  args:
+  - install
+  - cfn-lint
+
+- action: command.run
+  command: pipx
+  args:
+  - inject
+  - cfn-lint
+  - pydot
