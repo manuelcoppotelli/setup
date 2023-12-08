@@ -1,0 +1,7 @@
+actions:
+- action: package.install
+  name: wine-devel
+  repository: homebrew/cask
+  extra_args:
+  - --appdir=/Applications
+  - --no-quarantine
