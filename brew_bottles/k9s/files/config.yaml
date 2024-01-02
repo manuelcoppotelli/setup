@@ -1,0 +1,9 @@
+k9s:
+  ui:
+    skin: big-g
+  logoless: true
+  logger:
+    sinceSeconds: -1
+    fullScreenLogs: false
+    textWrap: true
+    showTime: false
