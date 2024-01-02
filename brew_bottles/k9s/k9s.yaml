@@ -5,5 +5,5 @@ actions:
 - action: package.install
   name: k9s
 - action: file.copy
-  from: plugin.yml
-  to: {{ user.config_dir }}/k9s/plugin.yml
+  from: plugins.yaml
+  to: {{ user.config_dir }}/k9s/plugins.yaml
