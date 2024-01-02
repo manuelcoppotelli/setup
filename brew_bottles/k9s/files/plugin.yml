@@ -1,7 +1,7 @@
-plugin:
+plugins:
 
   # Defines a plugin to provide a `Ctrl-F` shortcut to remove any finalizer.
-  delfinalizers:
+  delfinalizer:
     # Define a mnemonic to invoke the plugin
     shortCut: Ctrl-F
     # What will be shown on the K9s menu
