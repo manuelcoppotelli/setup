@@ -7,3 +7,6 @@ actions:
 - action: file.copy
   from: plugins.yaml
   to: {{ user.config_dir }}/k9s/plugins.yaml
+- action: file.copy
+  from: config.yaml
+  to: {{ user.config_dir }}/k9s/config.yaml
