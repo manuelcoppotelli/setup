@@ -7,4 +7,10 @@ actions:
   args:
   - '600'
   - {{user.home_dir}}/.ssh/config
-  
+- action: package.install
+  name: openssh
+- action: command.run
+  command: launchctl
+  args:
+  - disable
+  - user/$UID/com.openssh.ssh-agent
