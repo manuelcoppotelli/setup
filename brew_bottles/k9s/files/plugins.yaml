@@ -78,5 +78,22 @@ plugins:
     # Defines the command arguments
     args:
     - -c
-    - "kubectl get secret $NAME --context $CONTEXT -n $NAMESPACE -o go-template='{{index .data \"tls.crt\" | base64decode}}' | openssl x509 -subject -dates -ext subjectAltName -noout | less --RAW-CONTROL-CHARS"
-    
+    - "kubectl get secret $NAME --context $CONTEXT -n $NAMESPACE -o go-template='{{index .data \"tls.crt\" | base64decode}}' | openssl x509 -subject -dates -ext subjectAltName -checkend 1209600 -noout | sed 's/expire/expire in 14 days/' | sed \"s/will expire/$(tput bold)$(tput setaf 1)WILL EXPIRE$(tput sgr0)/\" | less --RAW-CONTROL-CHARS"
+
+  # Defines a plugin to provide a `s` shortcut to shell debug a node.
+  shellnode:
+    # Define a mnemonic to invoke the plugin
+    shortCut: s
+    # What will be shown on the K9s menu
+    description: Shell
+    # Collections of views that support this shortcut. (You can use `all`)
+    scopes:
+    - nodes
+    # The command to run upon invocation. Can use Krew plugins here too!
+    command: sh
+    # Whether or not to run the command in background mode
+    background: false
+    # Defines the command arguments
+    args:
+    - -c
+    - "kubectl --context $CONTEXT debug node/$NAME --image brix4dayz/swiss-army-knife --stdin --tty"
