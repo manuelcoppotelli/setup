@@ -1,5 +1,6 @@
 [alias]
 	cane = commit --amend --no-edit
+	fomo = !git fetch origin main --prune --prune-tags && git rebase origin/main --autostash
 
 [color]
 	# Use colors in Git commands that are capable of colored output when
